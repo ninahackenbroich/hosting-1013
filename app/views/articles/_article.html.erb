@@ -9,4 +9,10 @@
     <%= article.body %>
   </p>
 
+
 </div>
+<% if article.photos.attached? %>
+  <% article.photos.each do |p| %>
+    <%= cl_image_tag(p.key, width: 300, height: 200, crop: :fill) %>
+  <% end %>
+<% end %>
